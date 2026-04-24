@@ -2,7 +2,7 @@ import pygame
 from random import randint
 
 import velikostokna
-from palka import Palka
+from paddle import Paddle
 from micek import Micek
 
 pygame.init()
@@ -14,8 +14,8 @@ window = pygame.display.set_mode((windowwidth, windowheight))
 window.fill((0, 0, 0))
 pygame.display.set_caption("pong")
 
-paddle1 = Palka(window, 50, 0)
-paddle2 = Palka(window, windowwidth - 100, 1)
+paddle1 = Paddle(window, 50, 0)
+paddle2 = Paddle(window, windowwidth - 100, 1)
 
 ball = Micek(window, windowwidth / 2 - 25, windowheight / 2 - 25, paddle1, paddle2)
 

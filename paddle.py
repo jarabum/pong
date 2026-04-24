@@ -14,8 +14,16 @@ class Paddle:
         self.id = id
         self.vel = 10
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+        self.font = pygame.font.Font("ArchivoBlack-Regular.ttf", 70)
+        self.score = 0
+        self.scoretext = self.font.render(str(self.score), True, (255, 255, 255))
     def display(self):
+        self.scoretext = self.font.render(str(self.score), True, (255, 255, 255))
         pygame.draw.rect(self.window, self.color, [self.x, self.y, self.width, self.height])
+        if self.id == 0:
+            self.window.blit(self.scoretext, (self.x + 150, 60))
+        elif self.id == 1:
+            self.window.blit(self.scoretext, (self.x - 150, 60))
     def update(self):
         keys = pygame.key.get_pressed()
         if self.id == 0:

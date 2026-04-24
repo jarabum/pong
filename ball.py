@@ -13,8 +13,13 @@ class Ball:
         self.height = 50
         self.width = 50
         self.color = (255, 255, 255)
-        self.vx = randint(2, 4)
+        self.vx = randint(-6, 6)
         self.vy = randint(1, 5)
+        if self.vx > -2 and self.vx < 0:
+            self.vx -= 2
+        if self.vx < 2 and self.vx >= 0:
+            self.vx += 2
+
         self.vel = 0.3
         self.paddle1 = paddle1
         self.paddle2 = paddle2
@@ -59,10 +64,18 @@ class Ball:
     def death(self):
         self.vx = 0
         self.vy = 0
+        if self.x <= 20:
+            self.paddle2.score += 1
+        elif self.x >= windowwidth - 20:
+            self.paddle1.score += 1
         self.x = windowwidth / 2 - self.width / 2
         self.y = windowheight / 2 - self.height / 2
         self.rect.topleft = (self.x, self.y)
         self.display()
         pygame.time.delay(500)
-        self.vx = randint(2, 4)
+        self.vx = randint(-6, 6)
         self.vy = randint(1, 5)
+        if self.vx > -2 and self.vx < 0:
+            self.vx -= 2
+        if self.vx < 2 and self.vx >= 0:
+            self.vx += 2

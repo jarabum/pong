@@ -6,6 +6,7 @@ from paddle import Paddle
 from ball import Ball
 
 pygame.init()
+pygame.font.get_init()
 
 windowwidth = windowsize.windowwidth
 windowheight = windowsize.windowheight

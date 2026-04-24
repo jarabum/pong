@@ -1,9 +1,9 @@
 import pygame
-import velikostokna
+import windowsize
 from random import randint
 
-windowwidth = velikostokna.oknosirka
-windowheight = velikostokna.oknovyska
+windowwidth = windowsize.windowwidth
+windowheight = windowsize.windowheight
 
 class Ball:
     def __init__(self, window, x, y, paddle1, paddle2):

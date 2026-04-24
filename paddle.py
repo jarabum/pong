@@ -1,7 +1,7 @@
 import pygame
-import velikostokna
+import windowsize
 
-windowheight = velikostokna.oknovyska
+windowheight = windowsize.windowheight
 
 class Paddle:
     def __init__(self, window, x, id):

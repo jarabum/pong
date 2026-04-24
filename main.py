@@ -1,14 +1,14 @@
 import pygame
 from random import randint
 
-import velikostokna
+import windowsize
 from paddle import Paddle
 from ball import Ball
 
 pygame.init()
 
-windowwidth = velikostokna.oknosirka
-windowheight = velikostokna.oknovyska
+windowwidth = windowsize.windowwidth
+windowheight = windowsize.windowheight
 
 window = pygame.display.set_mode((windowwidth, windowheight))
 window.fill((0, 0, 0))

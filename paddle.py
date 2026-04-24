@@ -13,7 +13,7 @@ class Paddle:
         self.color = (255, 255, 255)
         self.id = id
         self.vel = 10
-        self.rect = pygame.Rect(self.x, self.y, self.width, self.width)
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
     def display(self):
         pygame.draw.rect(self.window, self.color, [self.x, self.y, self.width, self.height])
     def update(self):

@@ -18,6 +18,7 @@ class Paddle:
         self.score = 0
         self.scoretext = self.font.render(str(self.score), True, (255, 255, 255))
     def display(self):
+        self.scoretext = self.font.render(str(self.score), True, (255, 255, 255))
         pygame.draw.rect(self.window, self.color, [self.x, self.y, self.width, self.height])
         if self.id == 0:
             self.window.blit(self.scoretext, (self.x + 150, 60))

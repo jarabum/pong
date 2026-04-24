@@ -1,23 +1,23 @@
 import pygame
 from random import randint
 
-import velikostokna
-from palka import Palka
-from micek import Micek
+import windowsize
+from paddle import Paddle
+from ball import Ball
 
 pygame.init()
 
-oknosirka = velikostokna.oknosirka
-oknovyska = velikostokna.oknovyska
+windowwidth = windowsize.windowwidth
+windowheight = windowsize.windowheight
 
-okno = pygame.display.set_mode((oknosirka, oknovyska))
-okno.fill((0, 0, 0))
+window = pygame.display.set_mode((windowwidth, windowheight))
+window.fill((0, 0, 0))
 pygame.display.set_caption("pong")
 
-palka1 = Palka(okno, 50, 0)
-palka2 = Palka(okno, oknosirka - 100, 1)
+paddle1 = Paddle(window, 50, 0)
+paddle2 = Paddle(window, windowwidth - 100, 1)
 
-micek = Micek(okno, oknosirka / 2 - 25, oknovyska / 2 - 25, palka1, palka2)
+ball = Ball(window, windowwidth / 2 - 25, windowheight / 2 - 25, paddle1, paddle2)
 
 run = True
 while run:
@@ -25,14 +25,14 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-    okno.fill((0, 0, 0))
+    window.fill((0, 0, 0))
 
-    palka1.update()
-    palka2.update()
-    micek.update()
+    paddle1.update()
+    paddle2.update()
+    ball.update()
 
-    palka1.display()
-    palka2.display()
-    micek.display()
+    paddle1.display()
+    paddle2.display()
+    ball.display()
 
     pygame.display.update()
